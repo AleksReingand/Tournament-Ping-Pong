@@ -1,2 +1,2 @@
 # Ping-pong tournament Air Doctor
-Fun tournament 
+Fun ping-pong tournament 
