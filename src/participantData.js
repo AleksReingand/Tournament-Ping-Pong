@@ -1,4 +1,4 @@
-export const tourData = [
+export const participantData = [
   {
     id: 1,
     city: "new york",
