@@ -1,0 +1,18 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+$mainBlack: #222;
+$mainGreen: #9ec33c;
+$mainWhite: #fff;
+$mainGrey: #f1f2f2;
+$mainBlue: #0079bf;
+$cardGray: #acacac;
+
+body {
+    background: $mainGrey;
+    color: $mainBlack;
+    font-family: 'Alegreya Sans', sans-serif;
+}
