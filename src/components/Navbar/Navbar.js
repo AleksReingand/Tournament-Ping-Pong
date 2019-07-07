@@ -3,7 +3,7 @@ import '../Navbar/Navbar.scss';
 import logo from '../../sources/logo.png';
 
 export default function Navbar() {
-    return  <nav className="navbar">
+    return  <nav className="my-navbar">
         <img className="image-logo" src={logo} alt="air doctor tournament" />
         <ul className="nav-links">
             <li>
