@@ -4,37 +4,20 @@ import './Participant.scss';
 class Participant extends Component {
 
     render() {
-        const {firstName, lastName, photo, avatar, level} = this.props.participant;
-        //const name = this.props;
+        const {name} = this.props;
         return (
             <li className="list-group-item text-capitalize d-flex justify-content-between my-2">
-                
-                <div className="todo-icon">
+
+                <h6>{name}</h6>
+                <div className="d-flex flex-row justify-content-center align-items-center">
                     <span className="mx-2 text-success">
-                        <i className="fas fa-pen"></i>
+                        <i className="fas fa-pen"/>
                     </span>
                     <span className="mx-2 text-danger">
-                        <i className="fas fa-trash"></i>
+                        <i className="fas fa-trash"/>
                     </span>
                 </div>
             </li>
-            // <div className="participant">
-            //     <div>
-            //         <img 
-            //         src={photo}
-            //         alt=""/>
-            //         <span className="close-btn">
-            //             <i class="fa fa-window-close" aria-hidden="true" />
-            //         </span>
-            //     </div>
-            //     <div className="participant-info">
-            //         <h3>{firstName + " " + lastName}</h3>
-            //         <div className="participant-avatar">
-            //             <img src={avatar} alt=""/>
-            //         </div>
-            //         <h4>{level}</h4>
-            //     </div>
-            // </div>
         );
     }
 }

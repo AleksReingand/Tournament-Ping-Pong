@@ -4,42 +4,47 @@ import Navbar from './components/Navbar/Navbar';
 import ParticipantList from './components/ParticipantList/ParticipantList';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import uuid from 'uuid';
+import AddParticipant from "./components/AddParticipant/AddParticipant";
 
 class App extends Component {
   state = {
     participants: [],
     id: uuid(),
-    item: "",
-    editItem: false
-  }
+    name: "",
+    editName: false
+  };
 
   handleChange = (e) => {
     this.setState({
-      item: e.target.value
+      name: e.target.value
     });
-  }
+  };
   handleSubmit = (e) => {
     e.preventDefault();
 
     const newParticipant = {
       id: this.state.id,
-      name: this.state.item
+      name: this.state.name
     };
 
-    const updatedItems = [...this.state.participants, newParticipant];
+    const updatedParticipant = [...this.state.participants, newParticipant];
 
     this.setState({
-      participants: updatedItems,
-      item: "",
+      participants: updatedParticipant,
+      name: "",
       id: uuid(),
-      editItem: false
+      editName: false
     })
   };
   render() {
     return (
       <main>
-        <Navbar />
-        <ParticipantList items={this.state.items}/>
+        <Navbar/>
+        <AddParticipant participant={this.state.name}
+                        handleChange={this.handleChange}
+                        handleSubmit={this.handleSubmit}
+        />
+        <ParticipantList participants={this.state.participants}/>
       </main>
     );
   }
