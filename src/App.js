@@ -4,13 +4,15 @@ import Navbar from './components/Navbar/Navbar';
 import ParticipantList from './components/ParticipantList/ParticipantList';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import uuid from 'uuid';
-import AddParticipant from "./components/AddParticipant/AddParticipant";
+import AddParticipant from './components/AddParticipant/AddParticipant';
+import photo from './components/photoAleks.jpg';
 
 class App extends Component {
   state = {
     participants: [],
     id: uuid(),
     name: "",
+    photo: photo,
     editName: false
   };
 
@@ -24,7 +26,8 @@ class App extends Component {
 
     const newParticipant = {
       id: this.state.id,
-      name: this.state.name
+      name: this.state.name,
+      photo: this.state.photo
     };
 
     const updatedParticipant = [...this.state.participants, newParticipant];
