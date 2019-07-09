@@ -38,7 +38,7 @@ class App extends Component {
   };
   render() {
     return (
-      <main>
+      <main className="card card-body">
         <Navbar/>
         <AddParticipant participant={this.state.name}
                         handleChange={this.handleChange}

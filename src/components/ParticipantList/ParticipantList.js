@@ -5,13 +5,9 @@ import AddParticipant from "../AddParticipant/AddParticipant";
 
 class ParticipantList extends Component {
     render() {
-       const { participants } = this.state;
+       const { participants } = this.props;
         return (
             <div className="main-view">
-                <div className="card card-body my-3">
-                    <AddParticipant/>
-                </div>
-
                 <ul className="list-group my-5">
                     <h3 className="text-center"> Participant list</h3>
                     {
