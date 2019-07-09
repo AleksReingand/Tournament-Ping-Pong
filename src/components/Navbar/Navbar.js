@@ -8,13 +8,7 @@ export default function Navbar() {
         <ul className="nav-links">
             <li>
                 <a href="/" className="nav-link active">
-                    home
-                </a>
-            </li>
-
-            <li>
-                <a href="/" className="nav-link">
-                    participants
+                    participant list
                 </a>
             </li>
 
