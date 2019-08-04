@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import './ParticipantList.scss';
 import Participant from '../Participant/Participant';
-import AddParticipant from "../AddParticipant/AddParticipant";
 
 class ParticipantList extends Component {
     render() {
-       const { participants } = this.props;
+       const { participants, handleDelete } = this.props;
         return (
             <div className="main-view">
                 <ul className="list-group my-5">
@@ -13,7 +12,12 @@ class ParticipantList extends Component {
                     {
                         participants.map(p => {
                             return(
-                                <Participant key={p} name={p.name}/>
+                                <Participant
+                                 key={p.id}
+                                 name={p.name}
+                                 photo={p.photo}
+                                 handleDelete={() => handleDelete(p.id)}
+                                 />
                             )
                         })
                     }

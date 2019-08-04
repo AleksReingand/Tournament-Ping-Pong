@@ -4,7 +4,7 @@ import './Participant.scss';
 class Participant extends Component {
 
     render() {
-        const {name, photo} = this.props;
+        const {name, photo, handleDelete} = this.props;
         return (
             <li className="list-group-item text-capitalize d-flex justify-content-between my-2">
                 <img className="photo-conteiner" src={photo} alt=""/>
@@ -13,7 +13,7 @@ class Participant extends Component {
                     <span className="mx-2 text-success">
                         <i className="fas fa-pen"/>
                     </span>
-                    <span className="mx-2 text-danger">
+                    <span className="mx-2 text-danger" onClick={handleDelete}>
                         <i className="fas fa-trash"/>
                     </span>
                 </div>

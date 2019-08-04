@@ -8,6 +8,7 @@ import AddParticipant from './components/AddParticipant/AddParticipant';
 import photo from './components/photoAleks.jpg';
 
 class App extends Component {
+
   state = {
     participants: [],
     id: uuid(),
@@ -16,11 +17,16 @@ class App extends Component {
     editName: false
   };
 
+    componentDidMount() {
+
+    }
+
   handleChange = (e) => {
     this.setState({
       name: e.target.value
     });
   };
+
   handleSubmit = (e) => {
     e.preventDefault();
 
@@ -39,15 +45,25 @@ class App extends Component {
       editName: false
     })
   };
+
+  handleDelete = (id) => {
+    console.log("delete participant");
+    const filteredParticipant = this.state.participants.filter(participant => participant.id !== id);
+    this.setState({
+      participants : filteredParticipant
+    })
+  };
+
   render() {
     return (
       <main className="card card-body">
         <Navbar/>
         <AddParticipant participant={this.state.name}
+                        participant={this.state.photo}
                         handleChange={this.handleChange}
                         handleSubmit={this.handleSubmit}
         />
-        <ParticipantList participants={this.state.participants}/>
+        <ParticipantList participants={this.state.participants} handleDelete={this.handleDelete}/>
       </main>
     );
   }
